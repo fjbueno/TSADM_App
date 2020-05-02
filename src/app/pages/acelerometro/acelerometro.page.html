@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Acelerometro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngIf="data">
+    <ion-card-content>
+      <h2>X: {{data.x | number:'1.4-4'}}</h2>
+      <h2>Y: {{data.y | number:'1.4-4'}}</h2>
+      <h2>Z: {{data.z | number:'1.4-4'}}</h2>
+    </ion-card-content>
+  </ion-card>
+  <ion-button full primary (click)="IniciarAcelerometro()" expand="block" color="success">
+    <ion-icon name="checkmark-circle"></ion-icon>
+    Iniciar
+  </ion-button>
+  <ion-button full secondary (click)="FinalizarAcelerometro()" expand="block" color="danger">
+    <ion-icon name="close-circle"></ion-icon>
+    Detener
+  </ion-button>
+</ion-content>

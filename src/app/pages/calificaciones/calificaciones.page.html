@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Mis Calificaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="nuevaCalificacion()" color="secondary">
+      <ion-icon name="duplicate-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-list *ngFor="let c of calificaciones; let i = index" lines="full">
+    <ion-item>
+      <ion-icon name="options-outline" slot="start" size="small" color="success"></ion-icon>
+      <ion-label class="ion-text-wrap">
+        <ion-text color="Dark">
+          <h2>{{c.semana}}</h2>
+        </ion-text>
+        <ion-text color="secondary">        
+         <h3>{{c.actividad}}</h3>
+        </ion-text>
+        <ion-text color="tertiary">
+          <p>{{c.calificacion}}</p>
+        </ion-text>    
+      </ion-label> 
+      <ion-button (click)="eliminarcalificacion(c, i)" slot="end" size="default" color="danger">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>      
+    </ion-item>
+  </ion-list>
+</ion-content>

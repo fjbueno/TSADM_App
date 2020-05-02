@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Hola Mundo</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-toolbar>
+    <ion-title size="large">Informacion Basica</ion-title>
+  </ion-toolbar>
+    <ion-item>
+      <ion-label position="stacked">Introduce tu Nombre: </ion-label>
+      <ion-input type="text" [(ngModel)]="Nombre"></ion-input>
+    </ion-item>
+  <ion-toolbar>
+    <ion-title size="large">Selecciona tu Sexo: </ion-title>
+  </ion-toolbar>
+  <ion-radio-group [(ngModel)]="Sexo">
+    <ion-list>
+      <ion-item>
+        <ion-label>Masculino</ion-label>
+        <ion-radio value="Masculino"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Femenino</ion-label>
+        <ion-radio value="Femenino"></ion-radio>
+      </ion-item>
+    </ion-list>
+  </ion-radio-group>
+  <ion-toolbar>
+    <ion-title size="large">Selecciona tu Edad: </ion-title>
+  </ion-toolbar>
+    <ion-item>
+      <ion-label>Edad: </ion-label>
+      <ion-select placeholder="Tu Edad es: " [(ngModel)]="Edad">
+        <ion-select-option>Menor a 20 años</ion-select-option>
+        <ion-select-option>Entre 20 y 29 años</ion-select-option>
+        <ion-select-option>Entre 30 y 39 años</ion-select-option>
+        <ion-select-option>40 años o más</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <div class="centrado"> 
+      <ion-button style="margin: 10px" (click)="enviar()" color="primary">Enviar</ion-button>
+      <ion-button style="margin: 10px" (click)="limpiar()" color="secondary">Limpiar</ion-button>
+   </div>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-app>
+  <ion-menu side="start" menuId="first" contentId="content1">
+    <ion-header>
+      <ion-toolbar>
+        <ion-list-header>LANIA</ion-list-header>
+        <ion-note>Tópicos Selectos en Aplicaciones Distribuidas Móviles</ion-note>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list *ngFor="let pages of navigate">
+      <ion-menu-toggle auto-hide="true">
+        <ion-item [routerLink]="pages.url" routerDirection="forward">
+            <ion-icon [name]="pages.icon" slot="start"></ion-icon>
+               {{pages.title}} 
+        </ion-item>
+      </ion-menu-toggle>
+      </ion-list>
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="cerrarApp()" color="danger">
+          <ion-icon name="exit-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-content>
+  </ion-menu>
+<ion-router-outlet id="content1"></ion-router-outlet>
+</ion-app>
